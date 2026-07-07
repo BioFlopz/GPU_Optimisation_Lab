@@ -1,0 +1,75 @@
+==PROF== Profiling "matrixMulKernel_shared_unrolled" - 0: 0%....50%....100% - 9 passes
+==PROF== Disconnected from process 33208
+Kernel Time: 380.866 ms
+[33208] app.exe@127.0.0.1
+  matrixMulKernel_shared_unrolled(const float *, const float *, float *, int) (64, 64, 1)x(16, 16, 1), Context 1, Stream 7, Device 0, CC 7.5
+    Section: GPU Speed Of Light Throughput
+    ----------------------- ----------- ------------
+    Metric Name             Metric Unit Metric Value
+    ----------------------- ----------- ------------
+    DRAM Frequency                  Ghz         4.00
+    SM Frequency                    Ghz         1.55
+    Elapsed Cycles                cycle    8,513,139
+    Memory Throughput                 %        70.31
+    DRAM Throughput                   %        40.18
+    Duration                         ms         5.49
+    L1/TEX Cache Throughput           %        90.10
+    L2 Cache Throughput               %        24.38
+    SM Active Cycles              cycle 8,498,258.06
+    Compute (SM) Throughput           %        70.31
+    ----------------------- ----------- ------------
+
+    INF   Compute and Memory are well-balanced: To reduce runtime, both computation and memory traffic must be reduced. 
+          Check both the Compute Workload Analysis and Memory Workload Analysis sections.                               
+
+    Section: Launch Statistics
+    -------------------------------- --------------- ---------------
+    Metric Name                          Metric Unit    Metric Value
+    -------------------------------- --------------- ---------------
+    Block Size                                                   256
+    Function Cache Configuration                     CachePreferNone
+    Grid Size                                                  4,096
+    Registers Per Thread             register/thread              39
+    Shared Memory Configuration Size           Kbyte           32.77
+    Driver Shared Memory Per Block        byte/block               0
+    Dynamic Shared Memory Per Block       byte/block               0
+    Static Shared Memory Per Block       Kbyte/block            2.05
+    # SMs                                         SM              16
+    Stack Size                                                 1,024
+    Threads                                   thread       1,048,576
+    # TPCs                                                         8
+    Enabled TPC IDs                                              all
+    Uses Green Context                                             0
+    Waves Per SM                                                  64
+    -------------------------------- --------------- ---------------
+
+    Section: Occupancy
+    ------------------------------- ----------- ------------
+    Metric Name                     Metric Unit Metric Value
+    ------------------------------- ----------- ------------
+    Block Limit SM                        block           16
+    Block Limit Registers                 block            6
+    Block Limit Shared Mem                block           16
+    Block Limit Warps                     block            4
+    Theoretical Active Warps per SM        warp           32
+    Theoretical Occupancy                     %          100
+    Achieved Occupancy                        %        99.38
+    Achieved Active Warps Per SM           warp        31.80
+    ------------------------------- ----------- ------------
+
+    Section: GPU and Memory Workload Distribution
+    -------------------------- ----------- ------------
+    Metric Name                Metric Unit Metric Value
+    -------------------------- ----------- ------------
+    Average DRAM Active Cycles       cycle    8,819,863
+    Total DRAM Elapsed Cycles        cycle   87,814,144
+    Average L1 Active Cycles         cycle 8,498,258.06
+    Total L1 Elapsed Cycles          cycle  143,441,040
+    Average L2 Active Cycles         cycle 8,058,701.62
+    Total L2 Elapsed Cycles          cycle   64,532,992
+    Average SM Active Cycles         cycle 8,498,258.06
+    Total SM Elapsed Cycles          cycle  143,441,040
+    Average SMSP Active Cycles       cycle 8,498,233.22
+    Total SMSP Elapsed Cycles        cycle  573,764,160
+    -------------------------- ----------- ------------
+
