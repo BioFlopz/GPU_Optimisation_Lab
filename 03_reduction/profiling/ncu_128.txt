@@ -1,0 +1,86 @@
+==PROF== Connected to process 23004 (C:\Users\User\OneDrive\BioFlopz\GPU_Optimisation_Lab\03_reduction\release\app.exe)
+==PROF== Profiling "reduce_v4" - 0: 0%....50%....100% - 9 passes
+==PROF== Disconnected from process 23004
+CPU Result : 1.67772e+07
+GPU Result : 1.67772e+07
+Kernel Time : 589.044 ms
+[23004] app.exe@127.0.0.1
+  reduce_v4(const float *, float *, int) (65536, 1, 1)x(128, 1, 1), Context 1, Stream 7, Device 0, CC 7.5
+    Section: GPU Speed Of Light Throughput
+    ----------------------- ----------- ------------
+    Metric Name             Metric Unit Metric Value
+    ----------------------- ----------- ------------
+    DRAM Frequency                  Ghz         3.49
+    SM Frequency                    Ghz         1.55
+    Elapsed Cycles                cycle    1,039,098
+    Memory Throughput                 %        90.54
+    DRAM Throughput                   %        90.54
+    Duration                         us       670.21
+    L1/TEX Cache Throughput           %        42.92
+    L2 Cache Throughput               %        27.67
+    SM Active Cycles              cycle 1,117,489.56
+    Compute (SM) Throughput           %        38.12
+    ----------------------- ----------- ------------
+
+    INF   This workload is utilizing greater than 80.0% of the available compute or memory performance of this device.  
+          To further improve performance, work will likely need to be shifted from the most utilized to another unit.   
+          Start by analyzing DRAM in the Memory Workload Analysis section.                                              
+
+    Section: Launch Statistics
+    -------------------------------- --------------- ---------------
+    Metric Name                          Metric Unit    Metric Value
+    -------------------------------- --------------- ---------------
+    Block Size                                                   128
+    Function Cache Configuration                     CachePreferNone
+    Grid Size                                                 65,536
+    Registers Per Thread             register/thread              16
+    Shared Memory Configuration Size           Kbyte           32.77
+    Driver Shared Memory Per Block        byte/block               0
+    Dynamic Shared Memory Per Block       byte/block               0
+    Static Shared Memory Per Block        byte/block             512
+    # SMs                                         SM              16
+    Stack Size                                                 1,024
+    Threads                                   thread       8,388,608
+    # TPCs                                                         8
+    Enabled TPC IDs                                              all
+    Uses Green Context                                             0
+    Waves Per SM                                                 512
+    -------------------------------- --------------- ---------------
+
+    Section: Occupancy
+    ------------------------------- ----------- ------------
+    Metric Name                     Metric Unit Metric Value
+    ------------------------------- ----------- ------------
+    Block Limit SM                        block           16
+    Block Limit Registers                 block           32
+    Block Limit Shared Mem                block           64
+    Block Limit Warps                     block            8
+    Theoretical Active Warps per SM        warp           32
+    Theoretical Occupancy                     %          100
+    Achieved Occupancy                        %        77.59
+    Achieved Active Warps Per SM           warp        24.83
+    ------------------------------- ----------- ------------
+
+    OPT   Est. Local Speedup: 22.41%                                                                                    
+          The difference between calculated theoretical (100.0%) and measured achieved occupancy (77.6%) can be the     
+          result of warp scheduling overheads or workload imbalances during the kernel execution. Load imbalances can   
+          occur between warps within a block as well as across blocks of the same kernel. See the CUDA Best Practices   
+          Guide (https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html#occupancy) for more details on     
+          optimizing occupancy.                                                                                         
+
+    Section: GPU and Memory Workload Distribution
+    -------------------------- ----------- ------------
+    Metric Name                Metric Unit Metric Value
+    -------------------------- ----------- ------------
+    Average DRAM Active Cycles       cycle    2,119,882
+    Total DRAM Elapsed Cycles        cycle    9,365,504
+    Average L1 Active Cycles         cycle 1,117,489.56
+    Total L1 Elapsed Cycles          cycle   16,506,400
+    Average L2 Active Cycles         cycle   973,355.62
+    Total L2 Elapsed Cycles          cycle    7,861,008
+    Average SM Active Cycles         cycle 1,117,489.56
+    Total SM Elapsed Cycles          cycle   16,506,400
+    Average SMSP Active Cycles       cycle    1,116,383
+    Total SMSP Elapsed Cycles        cycle   66,025,600
+    -------------------------- ----------- ------------
+

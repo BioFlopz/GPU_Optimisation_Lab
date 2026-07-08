@@ -1,22 +1,25 @@
-==PROF== Profiling "matrixMulKernel_shared_unrolled" - 0: 0%....50%....100% - 9 passes
-==PROF== Disconnected from process 33208
-Kernel Time: 380.866 ms
-[33208] app.exe@127.0.0.1
-  matrixMulKernel_shared_unrolled(const float *, const float *, float *, int) (64, 64, 1)x(16, 16, 1), Context 1, Stream 7, Device 0, CC 7.5
+==PROF== Connected to process 14320 (C:\Users\User\OneDrive\BioFlopz\GPU_Optimisation_Lab\03_reduction\release\app.exe)
+==PROF== Profiling "reduce_v3" - 0: 0%....50%....100% - 9 passes
+==PROF== Disconnected from process 14320
+CPU Result : 1.67772e+07
+GPU Result : 1.67772e+07
+Kernel Time : 386.341 ms
+[14320] app.exe@127.0.0.1
+  reduce_v3(const float *, float *, int) (32768, 1, 1)x(256, 1, 1), Context 1, Stream 7, Device 0, CC 7.5
     Section: GPU Speed Of Light Throughput
     ----------------------- ----------- ------------
     Metric Name             Metric Unit Metric Value
     ----------------------- ----------- ------------
-    DRAM Frequency                  Ghz         4.00
+    DRAM Frequency                  Ghz         3.96
     SM Frequency                    Ghz         1.55
-    Elapsed Cycles                cycle    8,513,139
-    Memory Throughput                 %        70.31
-    DRAM Throughput                   %        40.18
-    Duration                         ms         5.49
-    L1/TEX Cache Throughput           %        90.10
-    L2 Cache Throughput               %        24.38
-    SM Active Cycles              cycle 8,498,258.06
-    Compute (SM) Throughput           %        70.31
+    Elapsed Cycles                cycle    1,286,469
+    Memory Throughput                 %        72.49
+    DRAM Throughput                   %        65.24
+    Duration                         us       830.69
+    L1/TEX Cache Throughput           %        81.16
+    L2 Cache Throughput               %        21.87
+    SM Active Cycles              cycle 1,274,391.12
+    Compute (SM) Throughput           %        72.49
     ----------------------- ----------- ------------
 
     INF   Compute and Memory are well-balanced: To reduce runtime, both computation and memory traffic must be reduced. 
@@ -28,19 +31,19 @@ Kernel Time: 380.866 ms
     -------------------------------- --------------- ---------------
     Block Size                                                   256
     Function Cache Configuration                     CachePreferNone
-    Grid Size                                                  4,096
-    Registers Per Thread             register/thread              39
+    Grid Size                                                 32,768
+    Registers Per Thread             register/thread              16
     Shared Memory Configuration Size           Kbyte           32.77
     Driver Shared Memory Per Block        byte/block               0
     Dynamic Shared Memory Per Block       byte/block               0
-    Static Shared Memory Per Block       Kbyte/block            2.05
+    Static Shared Memory Per Block       Kbyte/block            1.02
     # SMs                                         SM              16
     Stack Size                                                 1,024
-    Threads                                   thread       1,048,576
+    Threads                                   thread       8,388,608
     # TPCs                                                         8
     Enabled TPC IDs                                              all
     Uses Green Context                                             0
-    Waves Per SM                                                  64
+    Waves Per SM                                                 512
     -------------------------------- --------------- ---------------
 
     Section: Occupancy
@@ -48,28 +51,28 @@ Kernel Time: 380.866 ms
     Metric Name                     Metric Unit Metric Value
     ------------------------------- ----------- ------------
     Block Limit SM                        block           16
-    Block Limit Registers                 block            6
-    Block Limit Shared Mem                block           16
+    Block Limit Registers                 block           16
+    Block Limit Shared Mem                block           32
     Block Limit Warps                     block            4
     Theoretical Active Warps per SM        warp           32
     Theoretical Occupancy                     %          100
-    Achieved Occupancy                        %        99.38
-    Achieved Active Warps Per SM           warp        31.80
+    Achieved Occupancy                        %        91.15
+    Achieved Active Warps Per SM           warp        29.17
     ------------------------------- ----------- ------------
 
     Section: GPU and Memory Workload Distribution
     -------------------------- ----------- ------------
     Metric Name                Metric Unit Metric Value
     -------------------------- ----------- ------------
-    Average DRAM Active Cycles       cycle    8,819,863
-    Total DRAM Elapsed Cycles        cycle   87,814,144
-    Average L1 Active Cycles         cycle 8,498,258.06
-    Total L1 Elapsed Cycles          cycle  143,441,040
-    Average L2 Active Cycles         cycle 8,058,701.62
-    Total L2 Elapsed Cycles          cycle   64,532,992
-    Average SM Active Cycles         cycle 8,498,258.06
-    Total SM Elapsed Cycles          cycle  143,441,040
-    Average SMSP Active Cycles       cycle 8,498,233.22
-    Total SMSP Elapsed Cycles        cycle  573,764,160
+    Average DRAM Active Cycles       cycle    2,144,219
+    Total DRAM Elapsed Cycles        cycle   13,146,112
+    Average L1 Active Cycles         cycle 1,274,391.12
+    Total L1 Elapsed Cycles          cycle   20,432,592
+    Average L2 Active Cycles         cycle 1,208,228.12
+    Total L2 Elapsed Cycles          cycle    9,765,000
+    Average SM Active Cycles         cycle 1,274,391.12
+    Total SM Elapsed Cycles          cycle   20,432,592
+    Average SMSP Active Cycles       cycle 1,274,333.52
+    Total SMSP Elapsed Cycles        cycle   81,730,368
     -------------------------- ----------- ------------
 

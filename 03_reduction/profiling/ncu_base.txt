@@ -1,0 +1,78 @@
+==PROF== Connected to process 9424 (C:\Users\User\OneDrive\BioFlopz\GPU_Optimisation_Lab\03_reduction\release\app.exe)
+==PROF== Profiling "reduceNaive" - 0: 0%....50%....100% - 9 passes
+==PROF== Disconnected from process 9424
+CPU Result : 1.67772e+07
+GPU Result : 1.67772e+07
+Kernel Time : 333.375 ms
+[9424] app.exe@127.0.0.1
+  reduceNaive(const float *, float *, int) (65536, 1, 1)x(256, 1, 1), Context 1, Stream 7, Device 0, CC 7.5
+    Section: GPU Speed Of Light Throughput
+    ----------------------- ----------- ------------
+    Metric Name             Metric Unit Metric Value
+    ----------------------- ----------- ------------
+    DRAM Frequency                  Ghz         3.99
+    SM Frequency                    Ghz         1.55
+    Elapsed Cycles                cycle    3,089,477
+    Memory Throughput                 %        60.00
+    DRAM Throughput                   %        26.65
+    Duration                         ms         1.99
+    L1/TEX Cache Throughput           %        95.05
+    L2 Cache Throughput               %         9.28
+    SM Active Cycles              cycle 3,084,210.19
+    Compute (SM) Throughput           %        60.00
+    ----------------------- ----------- ------------
+
+    INF   Compute and Memory are well-balanced: To reduce runtime, both computation and memory traffic must be reduced. 
+          Check both the Compute Workload Analysis and Memory Workload Analysis sections.                               
+
+    Section: Launch Statistics
+    -------------------------------- --------------- ---------------
+    Metric Name                          Metric Unit    Metric Value
+    -------------------------------- --------------- ---------------
+    Block Size                                                   256
+    Function Cache Configuration                     CachePreferNone
+    Grid Size                                                 65,536
+    Registers Per Thread             register/thread              16
+    Shared Memory Configuration Size           Kbyte           32.77
+    Driver Shared Memory Per Block        byte/block               0
+    Dynamic Shared Memory Per Block       byte/block               0
+    Static Shared Memory Per Block       Kbyte/block            1.02
+    # SMs                                         SM              16
+    Stack Size                                                 1,024
+    Threads                                   thread      16,777,216
+    # TPCs                                                         8
+    Enabled TPC IDs                                              all
+    Uses Green Context                                             0
+    Waves Per SM                                               1,024
+    -------------------------------- --------------- ---------------
+
+    Section: Occupancy
+    ------------------------------- ----------- ------------
+    Metric Name                     Metric Unit Metric Value
+    ------------------------------- ----------- ------------
+    Block Limit SM                        block           16
+    Block Limit Registers                 block           16
+    Block Limit Shared Mem                block           32
+    Block Limit Warps                     block            4
+    Theoretical Active Warps per SM        warp           32
+    Theoretical Occupancy                     %          100
+    Achieved Occupancy                        %        91.83
+    Achieved Active Warps Per SM           warp        29.39
+    ------------------------------- ----------- ------------
+
+    Section: GPU and Memory Workload Distribution
+    -------------------------- ----------- ------------
+    Metric Name                Metric Unit Metric Value
+    -------------------------- ----------- ------------
+    Average DRAM Active Cycles       cycle    2,120,556
+    Total DRAM Elapsed Cycles        cycle   31,832,064
+    Average L1 Active Cycles         cycle 3,084,210.19
+    Total L1 Elapsed Cycles          cycle   49,370,088
+    Average L2 Active Cycles         cycle    2,847,059
+    Total L2 Elapsed Cycles          cycle   23,400,152
+    Average SM Active Cycles         cycle 3,084,210.19
+    Total SM Elapsed Cycles          cycle   49,370,088
+    Average SMSP Active Cycles       cycle 3,084,151.41
+    Total SMSP Elapsed Cycles        cycle  197,480,352
+    -------------------------- ----------- ------------
+
